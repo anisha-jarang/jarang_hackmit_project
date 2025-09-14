@@ -1,1 +1,3 @@
 # HackMIT
+
+#I work for a college access program hosted at MIT called MITES Semester, linked here: https://mites.mit.edu/discover-mites/mites-semester/ One of the major challenges I've noticed as both a student and an employee is the lack of a single, consolidated place for students to get information such as announcements for their summer classes and a place to organize their college application plans. Currently, MITES uses Google Classroom, Slack, and email to communicate and organize resources. Over this weekend, I attemped to set up a basic app skeleton that would consolidate this information to a single place. 
