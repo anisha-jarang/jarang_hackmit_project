@@ -1,0 +1,279 @@
+:root {
+    --green: #89C55A;
+    --pink: #D81680;
+    --blue: #44BED6;
+    --yellow: #FDB842;
+    --black: #000000;
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --gray-medium: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--gray-light) 0%, #e9ecef 100%);
+    min-height: 100vh;
+    color: var(--black);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--black) 0%, #333 100%);
+    color: var(--white);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--green);
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background: var(--green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(137, 197, 90, 0.3);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section h2 {
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--green);
+    display: inline-block;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--green);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(137, 197, 90, 0.1);
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(137, 197, 90, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--pink), #c2185b);
+}
+
+.btn-danger:hover {
+    box-shadow: 0 4px 15px rgba(216, 22, 128, 0.3);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.school-card {
+    border-left-color: var(--blue);
+    position: relative;
+    overflow: hidden;
+}
+
+.school-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 50px 50px 0;
+    border-color: transparent var(--blue) transparent transparent;
+}
+
+.deadline-urgent {
+    border-left-color: var(--pink);
+    background: linear-gradient(135deg, #fff 0%, #fef7f7 100%);
+}
+
+.deadline-soon {
+    border-left-color: var(--yellow);
+    background: linear-gradient(135deg, #fff 0%, #fffef7 100%);
+}
+
+.class-card {
+    border-left-color: var(--yellow);
+}
+
+.time-slot {
+    display: inline-block;
+    background: var(--green);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+}
+
+.priority-high {
+    border-left-color: var(--pink) !important;
+}
+
+.priority-medium {
+    border-left-color: var(--yellow) !important;
+}
+
+.priority-low {
+    border-left-color: var(--green) !important;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.stat-card.schools {
+    background: linear-gradient(135deg, var(--blue), #3a9bc1);
+}
+
+.stat-card.applications {
+    background: linear-gradient(135deg, var(--green), #7ab34f);
+}
+
+.stat-card.deadlines {
+    background: linear-gradient(135deg, var(--pink), #c2185b);
+}
+
+.stat-card.classes {
+    background: linear-gradient(135deg, var(--yellow), #f4a842);
+}
+
+.recommender-tag {
+    display: inline-block;
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    margin: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .section {
+        padding: 1rem;
+    }
+    
+    .nav {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        text-align: center;
+    }
+}
